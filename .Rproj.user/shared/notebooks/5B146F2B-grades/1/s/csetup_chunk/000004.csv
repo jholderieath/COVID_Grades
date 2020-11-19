@@ -1,0 +1,92 @@
+"0","library(readxl)
+library(""scales"")
+library(""stringr"")
+library(""ggthemes"") 
+library(cowplot)
+"
+"2","
+********************************************************
+"
+"2","Note: As of version 1.0.0, cowplot does not change the
+"
+"2","  default ggplot2 theme anymore. To recover the previous
+"
+"2","  behavior, execute:
+  theme_set(theme_cowplot())
+"
+"2","********************************************************
+
+"
+"2","
+Attaching package: ‘cowplot’
+
+"
+"2","The following object is masked from ‘package:ggthemes’:
+
+    theme_map
+
+"
+"0","library(knitr)"
+"0","library(kableExtra)"
+"2","Registered S3 methods overwritten by 'htmltools':
+  method               from         
+  print.html           tools:rstudio
+  print.shiny.tag      tools:rstudio
+  print.shiny.tag.list tools:rstudio
+"
+"0","require(nnet)"
+"2","Loading required package: nnet
+"
+"0","library(stargazer)"
+"2","
+Please cite as: 
+
+"
+"2"," Hlavac, Marek (2018). stargazer: Well-Formatted Regression and Summary Statistics Tables.
+"
+"2"," R package version 5.2.2. https://CRAN.R-project.org/package=stargazer 
+
+"
+"0","library(lmtest)"
+"2","Loading required package: zoo
+"
+"2","
+Attaching package: ‘zoo’
+
+"
+"2","The following objects are masked from ‘package:base’:
+
+    as.Date, as.Date.numeric
+
+"
+"0","library(sandwich)"
+"0","library(tidyverse)"
+"2","Registered S3 methods overwritten by 'dbplyr':
+  method         from
+  print.tbl_lazy     
+  print.tbl_sql      
+"
+"2","[30m── [1mAttaching packages[22m ────────────────────────────────────── tidyverse 1.3.0 ──[39m
+"
+"2","[30m[32m✓[30m [34mggplot2[30m 3.3.2     [32m✓[30m [34mpurrr  [30m 0.3.4
+[32m✓[30m [34mtibble [30m 3.0.3     [32m✓[30m [34mdplyr  [30m 1.0.0
+[32m✓[30m [34mtidyr  [30m 1.1.0     [32m✓[30m [34mforcats[30m 0.5.0
+[32m✓[30m [34mreadr  [30m 1.3.1     [39m
+"
+"2","[30m── [1mConflicts[22m ───────────────────────────────────────── tidyverse_conflicts() ──
+[31mx[30m [34mreadr[30m::[32mcol_factor()[30m masks [34mscales[30m::col_factor()
+[31mx[30m [34mpurrr[30m::[32mdiscard()[30m    masks [34mscales[30m::discard()
+[31mx[30m [34mdplyr[30m::[32mfilter()[30m     masks [34mstats[30m::filter()
+[31mx[30m [34mdplyr[30m::[32mgroup_rows()[30m masks [34mkableExtra[30m::group_rows()
+[31mx[30m [34mdplyr[30m::[32mlag()[30m        masks [34mstats[30m::lag()[39m
+"
+"0","library(ggeffects)"
+"2","
+Attaching package: ‘ggeffects’
+
+"
+"2","The following object is masked from ‘package:cowplot’:
+
+    get_title
+
+"
