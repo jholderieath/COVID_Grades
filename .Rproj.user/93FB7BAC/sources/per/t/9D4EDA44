@@ -1,0 +1,27 @@
+{
+    "id": "9D4EDA44",
+    "path": "~/Documents/GitHub/COVID_Grades/grades.Rmd",
+    "project_path": "grades.Rmd",
+    "type": "r_markdown",
+    "hash": "1491694174",
+    "contents": "",
+    "dirty": false,
+    "created": 1613332541664.0,
+    "source_on_save": false,
+    "relative_order": 1,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "572,0",
+        "scrollLine": "546",
+        "last_setup_crc32": "391ABC8C6fb81f2e"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1613428987,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1613428987404,
+    "read_only": false,
+    "read_only_alternatives": []
+}

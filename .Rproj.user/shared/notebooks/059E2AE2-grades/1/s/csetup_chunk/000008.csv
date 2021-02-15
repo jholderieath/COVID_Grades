@@ -1,0 +1,213 @@
+"0","knitr::opts_chunk$set(echo = TRUE)"
+"0","options(tinytex.verbose = TRUE)"
+"0","library(readxl)"
+"0","library(""scales"")"
+"0","library(""stringr"")"
+"0","library(""ggthemes"") "
+"0","library(cowplot)"
+"2","
+Attaching package: ‘cowplot’
+
+"
+"2","The following object is masked from ‘package:ggthemes’:
+
+    theme_map
+
+"
+"0","library(knitr)"
+"0","library(kableExtra)"
+"0","require(nnet)"
+"2","Loading required package: nnet
+"
+"0","library(stargazer)"
+"2","
+Please cite as: 
+
+"
+"2"," Hlavac, Marek (2018). stargazer: Well-Formatted Regression and Summary Statistics Tables.
+"
+"2"," R package version 5.2.2. https://CRAN.R-project.org/package=stargazer 
+
+"
+"0","library(lmtest)"
+"2","Loading required package: zoo
+"
+"2","
+Attaching package: ‘zoo’
+
+"
+"2","The following objects are masked from ‘package:base’:
+
+    as.Date, as.Date.numeric
+
+"
+"0","library(sandwich)"
+"0","library(tidyverse)"
+"2","Registered S3 methods overwritten by 'dbplyr':
+  method         from
+  print.tbl_lazy     
+  print.tbl_sql      
+"
+"2","[30m── [1mAttaching packages[22m ──────────────────────────────────────────────────────────────────────── tidyverse 1.3.0 ──[39m
+"
+"2","[30m[32m✓[30m [34mggplot2[30m 3.3.3     [32m✓[30m [34mpurrr  [30m 0.3.4
+[32m✓[30m [34mtibble [30m 3.0.5     [32m✓[30m [34mdplyr  [30m 1.0.3
+[32m✓[30m [34mtidyr  [30m 1.1.2     [32m✓[30m [34mforcats[30m 0.5.0
+[32m✓[30m [34mreadr  [30m 1.4.0     [39m
+"
+"2","[30m── [1mConflicts[22m ─────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
+[31mx[30m [34mreadr[30m::[32mcol_factor()[30m masks [34mscales[30m::col_factor()
+[31mx[30m [34mpurrr[30m::[32mdiscard()[30m    masks [34mscales[30m::discard()
+[31mx[30m [34mdplyr[30m::[32mfilter()[30m     masks [34mstats[30m::filter()
+[31mx[30m [34mdplyr[30m::[32mgroup_rows()[30m masks [34mkableExtra[30m::group_rows()
+[31mx[30m [34mdplyr[30m::[32mlag()[30m        masks [34mstats[30m::lag()[39m
+"
+"0","library(ggeffects)"
+"2","
+Attaching package: ‘ggeffects’
+
+"
+"2","The following object is masked from ‘package:cowplot’:
+
+    get_title
+
+"
+"0","library(flextable)"
+"2","
+Attaching package: ‘flextable’
+
+"
+"2","The following object is masked from ‘package:purrr’:
+
+    compose
+
+"
+"2","The following objects are masked from ‘package:kableExtra’:
+
+    as_image, footnote
+
+"
+"0","library(officer)"
+"2","
+Attaching package: ‘officer’
+
+"
+"2","The following object is masked from ‘package:readxl’:
+
+    read_xlsx
+
+"
+"0","library(censReg)"
+"2","Loading required package: maxLik
+"
+"2","Loading required package: miscTools
+"
+"2","
+Please cite the 'maxLik' package as:
+Henningsen, Arne and Toomet, Ott (2011). maxLik: A package for maximum likelihood estimation in R. Computational Statistics 26(3), 443-458. DOI 10.1007/s00180-010-0217-1.
+
+If you have questions, suggestions, or comments regarding the 'maxLik' package, please use a forum or 'tracker' at maxLik's R-Forge site:
+https://r-forge.r-project.org/projects/maxlik/
+"
+"2","
+Please cite the 'censReg' package as:
+Henningsen, Arne (2017). censReg: Censored Regression (Tobit) Models. R package version 0.5. http://CRAN.R-Project.org/package=censReg.
+
+If you have questions, suggestions, or comments regarding the 'censReg' package, please use a forum or 'tracker' at the R-Forge site of the 'sampleSelection' project:
+https://r-forge.r-project.org/projects/sampleselection/
+"
+"0","library(ggpubr)"
+"2","
+Attaching package: ‘ggpubr’
+
+"
+"2","The following objects are masked from ‘package:flextable’:
+
+    border, font, rotate
+
+"
+"2","The following object is masked from ‘package:cowplot’:
+
+    get_legend
+
+"
+"0","library(AER)"
+"2","Loading required package: car
+"
+"2","Loading required package: carData
+"
+"2","
+Attaching package: ‘car’
+
+"
+"2","The following object is masked from ‘package:dplyr’:
+
+    recode
+
+"
+"2","The following object is masked from ‘package:purrr’:
+
+    some
+
+"
+"2","Loading required package: survival
+"
+"0","library(jtools)"
+"0","library(robust)"
+"2","Loading required package: fit.models
+"
+"2","
+Attaching package: ‘fit.models’
+
+"
+"2","The following object is masked from ‘package:jtools’:
+
+    center
+
+"
+"2","Registered S3 methods overwritten by 'robust':
+  method              from      
+  plot.covfm          fit.models
+  print.covfm         fit.models
+  summary.covfm       fit.models
+  print.summary.covfm fit.models
+"
+"2","rlm is already registered in the fit.models registry
+"
+"2","covfm is already registered in the fit.models registry
+"
+"2","
+Attaching package: ‘robust’
+
+"
+"2","The following objects are masked from ‘package:fit.models’:
+
+    ddPlot.covfm, distancePlot.covfm, ellipsesPlot.covfm, screePlot.covfm
+
+"
+"0","library(ggrepel)"
+"0",""
+"0","set.seed(4798)"
+"0","dat <- read_excel(""Agriculture and Forestry Grades by Instructor and Course - Summer 2017 thru Spring 2020.xls"") %>%"
+"0","    rename(grade = `Grade Awarded`) %>%"
+"0","    filter(grade != 'AU') %>%"
+"0","    mutate(termC = as.character(Term)) %>%"
+"0","    filter(str_detect(termC, ""3$"")) %>%"
+"0","    mutate(Instructor = forcats::as_factor(Instructor), "
+"0","           Course = forcats::as_factor(Course),"
+"0","           Term = forcats::as_factor(termC),"
+"0","           Grade = factor(grade, levels = c(""A"", ""B"", ""C"", ""D"", ""F"", ""W"", ""S"", ""IC""))) %>%"
+"0","    mutate(Dept = forcats::as_factor(str_extract(Course, '[:alpha:]{3,4}')),"
+"0","           Course_Number = forcats::as_factor(str_extract(Course, '[:digit:]{3}'))) %>%"
+"0","    mutate(Upper = forcats::as_factor(ifelse(as.numeric(as.character(Course_Number)) >= 300,1,0))) %>%"
+"0","    unite(""ID"", Dept:Course_Number, sep = """", remove = TRUE) %>%"
+"0","    mutate(ID = forcats::as_factor(ID)) %>%"
+"0","    dplyr::select(-c(termC,grade,Course))"
+"0",""
+"0","dat$Instructor <- dat$Instructor %>% fct_anon()"
+"0",""
+"0","dat$pfw <- fct_recode(dat$Grade, ""PASS"" = ""A"", ""PASS"" = ""B"", ""PASS"" = ""C"", ""PASS"" = ""S"", ""FAIL"" = ""D"", ""FAIL"" = ""F"")"
+"0",""
+"0","#dat <- dat %>%"
+"0","#  filter(ID != ""FOR480"")"
+"0",""

@@ -1,0 +1,8 @@
+"0","dat %>%"
+"0","  group_by(ID, Instructor, Term) %>%"
+"0","  summarize(N=n()) %>%"
+"0","  arrange(ID,Term) %>%"
+"0","  flextable() %>%"
+"0","  theme_vanilla()"
+"2","`summarise()` has grouped output by 'ID', 'Instructor'. You can override using the `.groups` argument.
+"
