@@ -1,0 +1,5 @@
+"0","save_plot('~/results/histAndResult.png',plot= histAndResult, base_height = 13, base_width = 18)
+"
+"2","Error in grDevices::dev.off() : 
+  QuartzBitmap_Output - unable to open file '/Users/jjhold/results/histAndResult.png'
+"

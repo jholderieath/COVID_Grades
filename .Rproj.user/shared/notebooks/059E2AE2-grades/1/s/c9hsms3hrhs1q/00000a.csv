@@ -1,7 +1,0 @@
-"0",""
-"0",""
-"0","ggplot(dat, aes(x = Grade,fill = Term))+"
-"0","  geom_histogram(stat = 'count',position = 'dodge')  +"
-"0","  facet_grid(ID~., switch = ""y"")+"
-"0","  theme(strip.text.y.left = element_text(angle = 0))"
-"2","Ignoring unknown parameters: binwidth, bins, pad"
